@@ -5,6 +5,7 @@ import { API_OPTIONS } from "../util/constants";
 import { useDispatch } from "react-redux";
 import { addGptMovieResult } from "../util/gptSlice";
 import { addLoadingState } from "../util/gptSlice";
+import { FiSearch } from "react-icons/fi";
 
 const GptSearchBar = () => {
   const [language, setLanguage] = useState("English");
@@ -64,7 +65,10 @@ const GptSearchBar = () => {
             className="py-4 px-6 bg-red-600 hover:bg-red-700 rounded-e-md text-white font-bold border-none outline-none"
             onClick={handleGptSearchClick}
           >
-            {lang[language].search}
+            <span className="flex md:hidden">
+              <FiSearch />
+            </span>
+            <span className="hidden md:flex">{lang[language].search}</span>
           </button>
         </form>
       </div>

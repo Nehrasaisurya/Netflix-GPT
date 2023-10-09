@@ -14,4 +14,4 @@ export const API_OPTIONS = {
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w300";
 
-export const OPENAI_KEY = "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";
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

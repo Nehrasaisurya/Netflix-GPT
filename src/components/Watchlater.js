@@ -27,8 +27,11 @@ const Header = () => {
 
   return (
     <div>
-      <div className="absolute top-0 left-0 w-[100%]  px-8 py-2 z-100 bg-gradient-to-b from-black z-10 flex items-center justify-between">
-        <img src={NETFLIX_LOGO} alt="logo" className="w-44" />
+      <div className="absolute top-0 left-0 w-[100%] px-4 md:px-8 py-2 z-100 bg-gradient-to-b from-black z-10 flex items-center justify-between">
+        <Link to="/browse">
+          {" "}
+          <img src={NETFLIX_LOGO} alt="logo" className="w-32 md:w-44" />
+        </Link>
         {user && (
           <div className="flex items-center gap-6">
             <Link to="/browse">
@@ -66,8 +69,8 @@ const Header = () => {
         <h1 className="text-3xl font-bold text-white">Your Watchlater...</h1>
         <div className="flex overflow-x-scroll gap-7 mt-5">
           {watchlater.length !== 0 ? (
-            watchlater.map((movie) => (
-              <div className="main">
+            watchlater.map((movie, index) => (
+              <div className="main" key={index}>
                 <div className=" overflow-y-hidden">
                   <div className="p-1 overflow-y-hidden">
                     <div className="w-[200px] relative shadow-lg rounded-lg ">

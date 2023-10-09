@@ -56,18 +56,20 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 w-[100%]  px-8 py-2 z-100 bg-gradient-to-b from-black z-10 flex items-center justify-between">
-      <img src={NETFLIX_LOGO} alt="logo" className="w-44" />
+    <div className="absolute top-0 left-0 w-[100%]  px-4 md:px-8 py-2 z-100 bg-gradient-to-b from-black z-10 flex items-center justify-between">
+      <Link to="/browse">
+        <img src={NETFLIX_LOGO} alt="logo" className="w-32 md:w-44" />
+      </Link>
       {user && (
         <div className="flex items-center gap-6">
           <button
-            className="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-sm  text-white font-bold"
+            className="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-sm  text-white font-bold text-sm"
             onClick={HandleGptSearchClick}
           >
             {showGptSearch ? "Home" : "GPT Search"}
           </button>
           <div className="flex cursor-pointer" onClick={handleDropdown}>
-            <img src={user?.photoURL} className="w-10 rounded-sm" alt=".." />
+            <img src={user?.photoURL} className="w-9 rounded-sm" alt=".." />
             <button>
               <RiArrowDropDownLine className="text-white font-bold text-xl" />
             </button>

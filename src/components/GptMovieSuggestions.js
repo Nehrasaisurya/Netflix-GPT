@@ -24,7 +24,12 @@ const GptMovieSuggestions = () => {
   };
 
   if (!movieResults && !loading) {
-    return <h1 className="flex justify-center mt-40 text-white"></h1>;
+    return (
+      <h1 className="flex justify-center mt-10 text-white px-8 text-sm">
+        Stuck on what to watch? Let us pick the perfect movie for you, enter
+        what's in you head
+      </h1>
+    );
   } else if (!movieResults && loading) {
     return (
       <h1 className="flex justify-center mt-40 text-white">Loading.....</h1>
@@ -33,10 +38,11 @@ const GptMovieSuggestions = () => {
   return (
     <div className="flex justify-start flex-row md:flex-col px-2 sm:px-4 md:px-10 lg:px-52 xl:px-96 mt-10">
       <div>
-        {movieResults.map((movie) => (
+        {movieResults.map((movie, index) => (
           <div
             className="flex justify-center flex-col sm:flex-row pb-2 pt-8"
             style={{ borderBottom: "1px solid gray" }}
+            key={index}
           >
             <img
               src={IMG_CDN + movie[0].poster_path}
